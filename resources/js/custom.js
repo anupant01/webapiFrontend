@@ -4,25 +4,19 @@ $(document).ready(
 	// body...
 
 
-	$('#registerForm').submit(function(event)
+	$('#registerform').submit(function(event)
 	{
 		event.preventDefault();
 
 
 		var myFormData ={
-			username:$('#username').val();
-			addres:$('#address').val();
-			password:$('#password').val();
+			username:$('#username').val(),
+			addres:$('#address').val(),
+			password:$('#password').val()
 		}
 
 
-
-
-		
-
-
-
-	})
+	
 
 
 $.ajax({
@@ -32,7 +26,7 @@ $.ajax({
 	url: 'http://localhost:3001/v1/users',
 	method:'POST',
 	contentType:'application/json',
-	data:JSON.stringfy(myFormData)
+	data:JSON.stringify(myFormData),
 
 
 
@@ -40,15 +34,17 @@ success: function(result,status){
 
 
 
-}
+},
 
 error:function(jqXHR,status)
+{
+}
 	
 
 })
 
 
-
+})
 
 
 
